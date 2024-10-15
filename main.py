@@ -29,19 +29,25 @@ class InstaFollower:
         password_field.send_keys(insta_password)
         time.sleep(2)
         sign_in.click()
+
+    def find_followers(self):
         time.sleep(3)
-        search_icon = self.driver.find_element(By.XPATH,value='/html/body/div[2]/div/div/div/div[2]/div/div/div[1]/div[1]/div[2]/div/div/div/div/div[2]/div[2]')
+        search_icon = self.driver.find_element(By.XPATH,
+                                               value='/html/body/div[2]/div/div/div/div[2]/div/div/div[1]/div[1]/div[2]/div/div/div/div/div[2]/div[2]')
         search_icon.click()
         time.sleep(2)
-        search_input = self.driver.find_element(By.XPATH,value='/html/body/div[2]/div/div/div/div[2]/div/div/div[1]/div[1]/div[2]/div/div/div[2]/div/div/div[2]/div/div/div[1]/div/div/input')
-        search_input.send_keys("balaji_raina_")
+        search_input = self.driver.find_element(By.XPATH,
+                                                value='/html/body/div[2]/div/div/div/div[2]/div/div/div[1]/div[1]/div[2]/div/div/div[2]/div/div/div[2]/div/div/div[1]/div/div/input')
+        search_input.send_keys("kavz._.mk")
         time.sleep(2)
-        profile = self.driver.find_element(By.XPATH,value='/html/body/div[2]/div/div/div/div[2]/div/div/div[1]/div[1]/div[2]/div/div/div[2]/div/div/div[2]/div/div/div[2]/div/a[1]/div[1]')
+        profile = self.driver.find_element(By.XPATH,
+                                           value='/html/body/div[2]/div/div/div/div[2]/div/div/div[1]/div[1]/div[2]/div/div/div[2]/div/div/div[2]/div/div/div[2]/div/a[1]/div[1]')
         profile.click()
         time.sleep(3)
-        self.driver.find_element(By.CLASS_NAME,value="_acan._acap._acas._aj1-._ap30").click()
+        self.driver.find_element(By.CLASS_NAME, value="_acan._acap._acas._aj1-._ap30").click()
 
 
 
 in_fo = InstaFollower()
 in_fo.login()
+in_fo.find_followers()
